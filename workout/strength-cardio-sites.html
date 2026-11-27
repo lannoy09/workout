@@ -511,6 +511,7 @@ function WorkoutTracker() {
                   placeholder: 'Weight', className: 'flex-1 min-w-0 bg-gray-700 rounded-lg px-3 py-2 text-sm' }),
                 React.createElement('span', { className: 'text-gray-500 text-sm' }, '×'),
                 React.createElement('input', { type: 'text', inputMode: 'decimal', value: s.reps,
+                  onFocus: e => e.target.select(),
                   onChange: e => { const next = [...logEntry.setLogs]; next[i] = { ...next[i], reps: e.target.value }; setLogEntry({ ...logEntry, setLogs: next }); },
                   placeholder: 'Reps', className: 'flex-1 min-w-0 bg-gray-700 rounded-lg px-3 py-2 text-sm' }),
                 React.createElement('button', { onClick: () => { const next = logEntry.setLogs.filter((_, idx) => idx !== i); setLogEntry({ ...logEntry, setLogs: next }); },
